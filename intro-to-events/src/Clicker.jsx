@@ -1,16 +1,8 @@
-function handleClick(){
-    console.log("click");
-}
-
-function handlehover(){
-    console.log("hovered");
-}
-
-export default function Clicker() {
+export default function Clicker({ message, buttonText }) {
+    function handleClick() {
+        alert(message)
+    }
     return (
-        <div>
-            <p onMouseOver={handlehover}>click the button</p>
-            <button onClick={handleClick}>click</button>
-        </div>
+        <button onClick={handleClick} props={message}>{buttonText}</button>
     )
 }
